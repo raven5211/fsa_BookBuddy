@@ -22,3 +22,7 @@ body {
 h1 {
   margin: 1rem 0;
 }
+
+p[role="alert"] {
+  color: red;
+}
