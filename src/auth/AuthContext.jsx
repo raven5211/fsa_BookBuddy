@@ -23,8 +23,6 @@ export function AuthProvider({ children }) {
     attemptGetToken();
   }, []);
 
-  useEffect(() => console.log(token), [token]);
-
   async function register(firstname, lastname, email, password) {
     const newUser = {
       firstname: firstname,
@@ -62,7 +60,23 @@ export function AuthProvider({ children }) {
     localStorage.removeItem("authToken");
   }
 
-  const value = { token, register, login, logout };
+  async function getUser() {
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      const { data } = await axios.get(API + "/users/me", config);
+      return data;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+
+  const value = { token, register, login, logout, getUser };
   return <authContext.Provider value={value}>{children}</authContext.Provider>;
 }
 

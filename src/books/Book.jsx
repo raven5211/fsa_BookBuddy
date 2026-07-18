@@ -1,7 +1,7 @@
 import "./books.css";
 
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router";
+import { NavLink, useNavigate, useParams } from "react-router";
 import { getBook } from "../api/books";
 import { useAuth } from "../auth/AuthContext";
 import { reserveBook } from "../api/reservations";
@@ -10,9 +10,11 @@ export default function Book() {
   const { id } = useParams();
   const [book, setBook] = useState(null);
   const { token } = useAuth();
+  const navigate = useNavigate();
 
   async function attemptReserveBook() {
     await reserveBook(token, id);
+    navigate("/account");
   }
 
   async function loadBook() {
@@ -37,7 +39,7 @@ export default function Book() {
         <p>{book.description}</p>
         {book.available
           ? token && (
-              <button onClick={attemptReserveBook()}>Reserve this book</button>
+              <button onClick={attemptReserveBook}>Reserve this book</button>
             )
           : token && <button disabled>Book is already reserved</button>}
       </div>

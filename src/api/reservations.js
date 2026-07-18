@@ -31,7 +31,7 @@ export async function reserveBook(token, bookId) {
       },
     };
 
-    await axios.get(API + "/reservations", body, config);
+    await axios.post(API + "/reservations", body, config);
   } catch (error) {
     console.error(error);
     return [];
@@ -46,9 +46,8 @@ export async function returnBook(token, id) {
       },
     };
 
-    await axios.get(API + "/reservations/" + id, config);
+    const response = await axios.delete(API + "/reservations/" + id, config);
   } catch (error) {
     console.error(error);
-    return [];
   }
 }
