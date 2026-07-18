@@ -36,8 +36,8 @@ export function AuthProvider({ children }) {
     };
 
     const response = await axios.post(API + "/users/register", newUser, config);
-    setToken(response.data);
-    localStorage.setItem("authToken", response.data);
+    setToken(response.data.token);
+    localStorage.setItem("authToken", response.data.token);
   }
 
   async function login(email, password) {

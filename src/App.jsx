@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router";
 import Layout from "./layout/Layout";
 import CatalogList from "./books/CatalogList";
 import Book from "./books/Book";
-import AccountPage from "./acount/AccountPage";
+import AccountPage from "./account/AccountPage";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 

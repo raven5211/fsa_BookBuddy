@@ -1,3 +1,5 @@
+import "./account.css";
+
 import { useEffect, useState } from "react";
 import { useAuth } from "../auth/AuthContext";
 import ReservationsList from "./ReservationsList";

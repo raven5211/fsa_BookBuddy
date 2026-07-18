@@ -15,7 +15,7 @@ export default function ReservationsListItem({
   }
 
   return (
-    <div>
+    <div className="reservation">
       <Link to={`/books/${reservation.bookid}`}>{reservation.title}</Link>
       <p>{reservation.author}</p>
       <button onClick={attemptReturnBook}>Return book</button>
