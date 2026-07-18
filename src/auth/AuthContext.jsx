@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-//todo: convert to axios
 
 //get api path from .env file
 const API = import.meta.env.VITE_API;
@@ -9,7 +8,7 @@ const authContext = createContext();
 
 //create provider
 export function AuthProvider({ children }) {
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(null);
 
   async function register() {}
 

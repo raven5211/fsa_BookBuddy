@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <header>
       <NavLink className="header left" to={"/"}>
-        <img id="logo-image" src="../../public/books.png" />
+        <img id="logo-image" src="/books.png" />
         <p>Book Buddy</p>
       </NavLink>
       <div className="header right">

@@ -18,10 +18,6 @@ export default function CatalogList() {
     syncBooks();
   }, []);
 
-  useEffect(() => {
-    console.log(books);
-  }, [books]);
-
   return (
     <>
       <h1>Catalog</h1>

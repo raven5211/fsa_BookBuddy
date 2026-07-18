@@ -17,7 +17,7 @@ ul {
   background-color: gainsboro;
 }
 
-figure {
+.catalogItem figure {
   margin: 0.5rem;
   display: flex;
   justify-content: center;
@@ -41,11 +41,30 @@ h2 {
   margin: 0;
 }
 
-p {
+.catalogItem p {
   margin: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3; /* Number of lines before it cuts off */
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.bookInfo {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.bookInfo figure {
+  margin: 0;
+}
+
+.bookInfo figure img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.bookInfo button {
+  width: 100%;
 }
